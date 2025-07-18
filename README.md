@@ -1,1 +1,615 @@
 # Proyecto_Final
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colegio José Domingo de Santistevan</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #FFFFFF; }
+    header { background-color: #FFFFFF; color: black; padding: 20px; text-align: center; }
+    nav { background-color: #F0812E; }
+    nav ul { list-style-type: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; }
+    nav ul li { position: relative; }
+    nav ul li a { display: block; color: black; padding: 14px 20px; text-decoration: none; }
+    nav ul li a:hover { background-color: #7279AC; color: white; }
+    nav ul ul { display: none; position: absolute; background-color: #F0812E; top: 48px; left: 0; min-width: 160px; border-radius: 0 0 5px 5px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); flex-direction: column; }
+    nav ul ul li { width: 100%; }
+    nav ul ul a { padding: 12px 16px; }
+    nav ul li:hover > ul { display: block; }
+
+    .hero { background: url('hero.jpg') no-repeat center/cover; height: 300px; position: relative; color: #fff; display: flex; align-items: center; justify-content: center; text-shadow: 2px 2px #000; }
+    .hero h1 { font-size: 2em; }
+
+    section { padding: 20px; background: white; margin: 10px; border-radius: 8px; }
+    section h2 { color: #004080; margin-bottom: 10px; }
+
+    .grid { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .card { flex: 1; min-width: 250px; background: #f2f2f2; padding: 1rem; border-radius: 8px; }
+
+    form input, form textarea { width: 100%; padding: 0.5rem; margin-bottom: 1rem; }
+    form button { padding: 0.7rem 1.5rem; background: #004080; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+
+    footer { background: #7279AC; color: white; text-align: center; padding: 10px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Colegio José Domingo de Santistevan</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#inicio">Inicio</a></li>
+
+    <li>
+      <a href="#nosotros">¿Quiénes somos?</a>
+      <ul>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#mision">Misión, Visión y Valores</a></li>
+        <li><a href="#equipo">Autoridades</a></li>
+        <li><a href="#areas">Áreas y Departamentos</a></li>
+        <li><a href="#infraestructura">Infraestructura</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#reglamento">Reglamento</a></li>
+        <li><a href="#himno">Himno y Bandera</a></li>
+        <li><a href="#permisos">Permisos de Funcionamiento</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#niveles">Niveles de Estudio</a>
+      <ul>
+        <li><a href="#inicial">Inicial</a></li>
+        <li><a href="#basica">Básica</a></li>
+        <li><a href="#bachillerato">Bachillerato</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#metodologia">Metodología Académica</a></li>
+
+    <li>
+      <a href="#informacion">Información Académica</a>
+      <ul>
+        <li><a href="#convenios">Convenios Académicos</a></li>
+        <li><a href="#periodos">Periodos Académicos</a></li>
+        <li><a href="#uniformes">Uniformes</a></li>
+        <li><a href="#horarios">Horarios</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#admisiones">Admisiones</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<section id="inicio">
+  <h2>Inicio</h2>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <style>
+        .carousel-container {
+            position: relative;
+            max-width: 800px; /* Adjust as needed */
+            margin: auto;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .carousel-slide {
+            display: none;
+            width: 100%;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Navigation buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Indicators (dots) */
+        .dots-container {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="carousel-container">
+        <div class="carousel-slide fade">
+            <img src="https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/468721555_18233364367303875_305968791183832579_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=H9AkNtDYJPYQ7kNvwHpkE4s&_nc_oc=Adm-J90yayIKG3GmrU4wV2wQGufzym9ILk1Gtd9q9zzSWwKp_YUNaUUt8_DheQlpDVU&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&_nc_gid=m9mTlRRRpxBol39jc3EAJQ&oh=00_AfQxEsqlanODZNSmvIR315xVpbeA04xKsoenifEAQkJUjw&oe=687B40D3">
+        </div>
+
+        <div class="carousel-slide fade">
+            <img src="https://scontent.fgye18-1.fna.fbcdn.net/v/t51.75761-15/501337926_18252939874303875_9121096744714824283_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Q0_YJ_kguJQQ7kNvwE8tEJC&_nc_oc=AdlrLn0kUpT4rB9myhnGbscvJfayE_BbgqDR8VDXOcSzGZ4EGnHlLNPCNSC61XDPOSE&_nc_zt=23&_nc_ht=scontent.fgye18-1.fna&_nc_gid=Ujf3QVOYsdVLWTfKncqNKw&oh=00_AfTWK4TFiC7AxNEE3Ko8a6kL9iTCxWpZoAxRz66XWc0DDQ&oe=687CE5D5">
+        </div>
+
+        <div class="carousel-slide fade">
+            <img src="https://scontent.fgye18-1.fna.fbcdn.net/v/t39.30808-6/490139583_656382487137816_6259846647902196843_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=sIMuBL5zVsAQ7kNvwFmfTLw&_nc_oc=AdmgCDNrFH-QMOXFU9NHDoKEyRZ-qTl00ndr8V9iA3GfteSgNGOkdfPsrHIa_qTJ2LE&_nc_zt=23&_nc_ht=scontent.fgye18-1.fna&_nc_gid=hGIz4uqCzbMJtAY9NA7Ozw&oh=00_AfQhJINfocHEWvdaw33xyUar8wbI-x-VYGDIY7Y9rt8CmQ&oe=687CC771">
+        </div>
+
+        <div class="carousel-slide fade">
+            <img src="https://scontent.fgye18-1.fna.fbcdn.net/v/t51.75761-15/501311364_18252939958303875_2732266260932697284_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=IPW-PyIE8UIQ7kNvwEUK4fT&_nc_oc=Adk-buVnTUt-pPYNxW0fafxb4qheTQtrUKgjSOxAl35qsCHm5sbOpTOBFm9DSPV3YDs&_nc_zt=23&_nc_ht=scontent.fgye18-1.fna&_nc_gid=m7gL4ZHct7LIGbODFG0ihQ&oh=00_AfTc0lwsx32vCvmf_1zVBhlb5WsH7G6KNbFbTEn8JKD93g&oe=687CC938">
+        </div>
+
+        <div class="carousel-slide fade">
+            <img src="https://scontent.fgye18-1.fna.fbcdn.net/v/t39.30808-6/468829868_18233375842303875_6073716453229405910_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=6hr9k17k-iMQ7kNvwEQ7hNY&_nc_oc=AdmMfh2dPMB0hjEALi2znvgmmBfv4jQka6WDcUsssUp5DEIrLDXbRhrnduAl8LtLup4&_nc_zt=23&_nc_ht=scontent.fgye18-1.fna&_nc_gid=K02oeAQXpvHfPHS4bTM8ug&oh=00_AfQUstIV_QHOriic4Wlpk2mHRMAbkeR4dsQQvtQf6KqB3g&oe=687CDD7C">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("carousel-slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+
+</section>
+
+
+<section id="nosotros">
+  <h2>¿Quiénes somos?</h2>
+  <img src="https://santistevan.edu.ec/images/Fachada_JDS_2024.jpg" alt="Flowers in Chania" width="660" height="245">
+  <p>La Unidad Educativa "José Domingo de Santistevan" es una institución privada perteneciente a la Red de Colegios de Formación Profesional de la Junta de Beneficencia de Guayaquil, con la misión de formar estudiantes libres, responsables y solidarios, brindando una educación de calidad basada en valores e impulsando la innovación y la formación profesional.</p>
+
+<p>Ofrecemos educación desde Inicial 2 hasta Tercero de Bachillerato, con modernas instalaciones que incluyen canchas deportivas y laboratorios especializados, garantizando una formación integral.</p>
+
+<p>Nuestra historia inicia con la administración municipal, para luego ser gestionada por la Junta de Beneficencia. Inaugurada el 5 de enero de 1905, la institución fue fundada con fondos donados por José Domingo de Santistevan. Hasta el 2001, fue administrada por los Padres Salesianos.</p>
+
+<p>Enfocamos nuestra enseñanza en la participación cívica y comunitaria y destacamos por la excelencia académica, reflejada en los logros de nuestros aprendices. Con 1.200 estudiantes, hemos formado a generaciones que han dejado su huella en la sociedad, como el Dr. Eduardo Peña Triviño, ex Ministro de Educación y Vicepresidente de la República.</p>
+
+<p>Reconocida por su alto rendimiento académico y deportivo, la Unidad Educativa José Domingo de Santistevan se posiciona como una institución de referencia en Guayaquil.</p>
+
+<h1>Historia</h1>
+<img src="https://santistevan.edu.ec/images/santistevan/web/banda_santistevan.jpg" alt="Flowers in Chania" width="660" height="245">
+        <p>El Directorio de la Junta de Beneficencia de Guayaquil, en Sesión General del 12 de julio de 1903, resolvió construir el Asilo de niños Huérfanos, José Domingo de Santistevan, en un lote situado en las faldas del Cerro Santa Ana. El 5 de enero de 1905, se marcó la fecha de fundación del asilo, el que dio inicio en ese año a sus labores educativas y de asistencia social.</p>
+
+<p>La administración de esta obra de enorme trascendencia para la comunidad guayaquileña fue encargada a la Comunidad Salesiana del Ecuador, cuyo primer Director fue Monseñor Obispo Domingo Comín. La finalidad de esta institución era la de recibir niños huérfanos y de escasos recursos económicos y brindarles educación primaria, alimentación y formación espiritual.</p>
+
+<p>En 1905 se inició esta obra con 24 niños varones. Se les recibía desde los 6 años de edad y solamente se les impartía enseñanza primaria. El horario de la escuela en la mañana era de 08h00 a 11h30 y en la tarde de 13h30 a 15h45.</p>
+
+<p>El asilo mantenía dos modalidades de estudio con estudiantes internos y externos, quienes formaban parte de un selecto coro, la orquesta, la sociedad de deportes, etc. En 1908, durante la crisis de la fiebre bubónica, la Junta de Beneficencia dispuso que este local sirviera de refugio para los enfermos.
+
+<p>El edificio original del Instituto, adosado a las faldas del Cerro Santa Ana y con estructura de madera, fue reconstruido en cemento en 1937. En aquel entonces, la escuela contaba con 6 salones de clase con capacidad de 60 alumnos por aula.</p>
+
+<h1>Patrono</h1>
+<img src="https://santistevan.edu.ec/images/santistevan/web/jose_domingo_santistevan.jpg" alt="Flowers in Chania" width="245" height="245">
+<p>Nuestro Patrono, Don José Domingo de Santistevan, nació en Daule el 15 de agosto de 1830; sus padres fueron Don Pedro María Santistevan y Doña Josefa Iglesias. Fue Jefe Político de Daule, Senador de la República, Diputado del Congreso Nacional, además de miembro fundador de la Junta de Beneficencia de Guayaquil. Durante el trayecto de toda su vida, siempre fue un asiduo benefactor de los más desposeídos. Falleció el 15 de abril de 1885.</p>
+
+<h1>Misión y Visión</h1>
+<img src="https://santistevan.edu.ec/images/santistevanimagenes/Foto_Mision_y_Vision_JDS_2024.jpg" alt="Flowers in Chania" width="300" height="200">
+<h1>Misión</h1>
+
+<p>La Unidad Educativa  José Domingo de Santistevan tiene como misión "Formar integralmente a niños y jóvenes con mentalidad creadora, solidaria, productiva y crítica, fortalecida en el desarrollo del pensamiento y educación en valores y proveer a la sociedad de seres humanos competentes, optimizando los procesos e impulsando el desarrollo eficaz de nuestro talento humano, sastifaciendo las necesidades de los estudiantes, de el desarrollo del país, y de sus representantes".</p>
+
+<h1>Visión</h1>
+<p>Ser una institución facilitadora de los aprendizajes significativos, detectar y desarrollar las inteligencias múltiples cimentadas en fundamentos pedagógicos holísticos, pensamientos renovadores, tecnologías modernas, afianzados también en los postulados de la religión católica y vigorizar con un segundo idioma que permita una formación sustentable, productiva y energizante para nuestros educandos.</p>
+
+<p>Concebimos la educación como un proceso activo, dinámico y con sentido de liderazgo, búsqueda de la excelencia y promueve la participación esencial de un grupo humano consciente  comprometido con el papel fundamental que desempeña en nuestra</p>
+
+<h1>Autoridades</h1>
+
+<p>Ing. Jorge Roca Arteta</p>
+<b><p>Inspector</p></b>
+
+<p>Mgs. Javier Ortiz Carrillo</p>
+<b><p>Gerente General de Educación</p></b>
+
+<p>Mgs. Giovanna Margarita Cordero Villavicencio</p>
+<b><p>Rectora</p></b>
+
+<p>Ec. Ricardo Manuel Troya Andrade</p>
+<b><p>Administrador</p></b>
+
+<h1>Áreas y Departamentos</h1>
+<img src="https://santistevan.edu.ec/images/santistevanimagenes/Area_y_departamentos.jpg" alt="Flowers in Chania" width="350" height="200">
+
+<p>La Junta de Beneficencia de Guayaquil, administradora de la Unidad Educativa José Domingo de Santistevan, ha sido fundamental en el crecimiento tanto pedagógico como en infraestructura, lo que nos permite brindar formación a más de 1,200 aprendices.</p>
+
+<p>Contamos con instalaciones modernas, incluyendo canchas de fútbol, básquet y vóley, laboratorios especializados de computación, robótica, física y química. Estas facilidades permiten desarrollar las habilidades deportivas, tecnológicas y científicas de nuestros aprendices.</p>
+
+<h1>Infraestructura</h1>
+<p>- Salones de clase con aire acondicionado</p>
+<p>- Laboratorios de computación</p>
+<p>- Laboratorio de física y química</p>
+<p>- Laboratorios de robótica</p>
+<p>- Sala de enfermería</p>
+<p>- Sala de música</p>
+<p>- Sala de arte</p>
+<p>- Canchas deportivas de fútbol, básquet y vóley</p>
+<p>- Juegos infantiles para Educación Inicial</p>
+<p>- Capilla</p>
+<p>- Graderíos</p>
+<p>- Comedores</p>
+
+<h2>Ubicación</h2>
+  <p>Estamos ubicados en:</p>
+  <address>
+    Av. José Domingo de Santistevan N44-101 y San Martín,<br />
+    Guayaquil, Ecuador.
+  </address>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.6584231336125!2d-79.8833971857269!3d-2.196480937583081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d1241efbcf355%3A0x896ee50b101540a3!2sUnidad%20Educativa%20Jos%C3%A9%20Domingo%20de%20Santistevan!5e0!3m2!1ses!2sec!4v1687009999043!5m2!1ses!2sec"
+    width="100%"
+    height="300"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+<h1>Reglamentos</h1>
+<p><strong>A) DEL SECTOR ESTUDIANTIL</strong></p>
+
+<p><strong>a. De la asistencia y puntualidad.</strong></p>
+
+<p>La práctica de valores se hace evidente a través de las acciones que los miembros de la comunidad educativa de la UEJDS demuestran en la diaria participación de sus responsabilidades; la puntualidad determina el respeto a todo espacio y programación que esté diseñado en función de organizar la interacción de directivos, aprendices, padres y madres de familia y/o representantes legales.</p>
+
+<p>Los aprendices pueden ingresar desde las 07:00 hasta las 07:45; a esta hora se procederá con el registro de atrasos y afectará su calificación de comportamiento.</p>
+
+<p>Las inasistencias deben ser justificadas personalmente y/o por correo por el representante dirigido al tutor con copia a inspección general.</p>
+
+<p>Tanto la inasistencia a clases como el abandono furtivo de la institución se informará inmediatamente al representante y se procederá a realizar el seguimiento respectivo.</p>
+
+<p>El aprendiz de cualquier grado/curso y nivel cuyas inasistencias injustificadas excedieran el 15% del total de horas anuales laborables, o cuyas inasistencias justificadas excedieran el 25%, en una o más asignaturas, se aplicará el proceso según la LOEI.</p>
+
+<p><strong>b. De la presentación personal.</strong></p>
+
+<p>El respeto a la institución y a sí mismo, cada aprendiz lo demostrará, entre otras maneras, con la presentación personal impecable. Por ello no se les permitirá, a los varones: el corte extravagante ni el tinturado del cabello, el uso de aretes, piercing, pulseras, brazaletes, collares o joyas; a las mujeres: el maquillaje, tinturarse el cabello, usar piercing, brazaletes, collares, joyas ni adornos en el cabello, excepto lazos de colores institucionales; en cuanto a las uñas no se les admitirá que las mantengan largas; si se las pintan que sea de un color natural (brillo).</p>
+
+<p><strong>c. Del retorno a los hogares.</strong></p>
+
+<p>En las horas convenidas (12:30 para preparatorio; 14:00 para básica elemental; 15:45 desde quinto hasta Bachillerato) los aprendices forman tres grupos; los que utilizan expresos escolares; los que se movilizan en autos y expresos particulares y los que hacen uso del servicio de transporte público y salen de manera autónoma con autorización por escrito por parte de sus representados.</p>
+
+<p>La responsabilidad por problemas que pudieran ocurrir a quienes integran estos tres grupos, una vez traspasados los predios de la institución, recae sobre sus padres o representantes.</p>
+
+<p><strong>d. Del cuidado de los bienes.</strong></p>
+
+<p>El cuidado y la utilización adecuada del mobiliario, laboratorios, servicios higiénicos, salones, instalaciones en general son obligaciones de todos y cada uno de los aprendices. Su destrucción o deterioro deliberados conlleva la reposición o el costo de su reparación, sin perjuicio de las sanciones adicionales que se derivaren.</p>
+
+<p><strong>e. De los permisos.</strong></p>
+
+<p>Para salir anticipadamente de la institución, el inspector concederá el permiso solicitado personalmente por los padres o representantes; en caso contrario será negado.</p>
+
+<p><strong>f. El uso de teléfonos celulares y otros objetos ajenos al proceso educativo.</strong></p>
+
+<p>Se prohíbe expresamente que los aprendices traigan a la institución objetos ajenos al proceso educativo (teléfonos celulares, equipos electrónicos, juguetes, dinero en efectivo que exceden el gasto diario, plumas costosas, etc). La desobediencia conlleva la requisición temporal del bien hasta que su representante asista a retirarlo y la sanción correspondiente. Por daños o pérdidas de esos objetos la institución no asumirá ninguna responsabilidad.</p>
+
+<p><strong>g. De los deberes y derechos de convivencia.</strong></p>
+
+<p>Todo aprendiz es sujeto de derechos y deberes que se entrelazan inevitablemente en la convivencia diaria, la Unidad Educativa "José Domingo de Santistevan" destaca los siguientes:</p>
+
+<p>Asumir su propio proceso de aprendizaje, mantener relaciones productivas de amistad y compañerismo, convertirse en el primer interesado en superar las situaciones personales problemáticas y en recuperar los contenidos curriculares deficientemente asimilados, promover acciones que favorezcan un aprendizaje más generador que receptor, más activo que pasivo. Más significativo que memorístico; interesarse por el trabajo académico durante las clases y fuera de ellas; no copiar las tareas y no permitir que las copien irresponsablemente; rendir las evaluaciones con honestidad.</p>
+
+<p>Tiene derecho a que se considere su criterio en la programación, ejecución y evaluación del proceso educativo, a participar en actividades culturales, deportivas, sociales, ecológicas, académicas en general; a que se respete su integridad física, psicológica y moral; a ser elegido como representante de la sección o integrante de comisiones; a recibir atención psicológica y primeros auxilios.</p>
+
+<p>Disfruta del derecho de ser tratado y el deber de tratar con cortesía a autoridades, profesores, empleados, condiscípulos; a participar responsablemente en los actos institucionales y a respetar su pertenencia a la institución y demostrar un digno comportamiento social; a disfrutar de seguridad personal y a obedecer las normas que precauten esa seguridad.</p>
+
+<p><strong>h. Del cumplimiento de deberes y normas.</strong></p>
+
+<p>Las conductas contrarias a los deberes y normas serán corregidas según gravedad, mediante la aplicación de una de estas medidas: amonestación verbal o escrita, calificado según lo estipulado en la reunión de análisis de comportamiento, suspensión del derecho de asistencia a clases por un tiempo prudencial, debiendo asumir por su cuenta el aprendizaje correspondiente; condicionamiento de la matrícula, separación definitiva y negación de la matrícula. En todos los casos, los aprendices y sus representantes, tendrán derecho a ser escuchados.</p>
+
+<p>Las infracciones leves serán superadas a nivel de diálogo orientador; las reincidencias, a nivel de amonestaciones y sanciones.</p>
+
+<p>La amonestación o sanción será impuesta (en el orden que se menciona) por el docente, tutor, la comisión de disciplina, la junta del curso y rectorado. El aprendiz que con su mal comportamiento fuera del plantel, inclusive en horas no laborables, comprometa el buen nombre de nuestra Unidad Educativa, será sancionado acorde a la gravedad de su falta.</p>
+
+<p><strong>B) DEL SECTOR FAMILIAR</strong></p>
+
+<p><strong>a. Deberes y derechos.</strong></p>
+
+<p>El padre, la madre, los abuelos, los hermanos mayores, la familia en general, es la primera y principal responsable de la educación de sus hijos. Su deber y derecho educativo son esenciales primarios, insustituibles, inalienables e irrenunciables.</p>
+
+<p>Al matricular a sus hijos en el Santistevan se comprometen a asumir los valores humanos y cristianos en su dimensión personal, familiar y social; colaborar estrictamente con autoridades y profesores en pro de una educación integral, asistir a las reuniones convocadas, justificar personalmente las inasistencias, colaborar con el uso adecuado y la presentación del uniforme.</p>
+
+<p>Es su deber y derecho hacer un seguimiento del aprendizaje, comunicarse con autoridades y profesores para plantear sugerencias, hacer reclamos, recabar información; elegir y ser elegido en los organismos de padres de familia, acorde con las políticas y filosofía institucionales; participar en las actividades académicas especialmente organizadas para el efecto.</p>
+
+<p><strong>b. Función socializadora y formativa.</strong></p>
+
+<p>Primordialmente consiste en crear un ambiente que les permita, a padres e hijos, el desarrollo de las conductas pertinentes y la interiorización de:</p>
+
+<p><strong>Valores:</strong> mediante las vivencias y testimonios de vida en cuanto a la responsabilidad, honestidad, justicia, respeto a reglas, etc.</p>
+
+<p><strong>Motivación:</strong> mostrando interés genuino a sus hijos; aceptación, respeto, amor, comunicación.</p>
+
+<p><strong>Interés:</strong> al compartir juegos, creando espacios para descubrir y desarrollar intereses, habilidades y destrezas.</p>
+
+<p><strong>Metas:</strong> estimulándolos por sus logros y esfuerzos; respetando y aceptando sus capacidades.</p>
+
+<p><strong>Uso del tiempo libre:</strong> proporcionando o sugiriendo actividades recreativo-formativa: práctica de deportes, afición por cualquier tipo de arte, colección, utilización correcta de internet, etc.</p>
+
+<p><strong>Escucha asertiva, atención y observación:</strong> escuchándoles, manteniendo diálogos, realizando actividades en conjunto, evitando la bulla, el ruido, respetando su silencio e intimidad.</p>
+
+<p><strong>Actitud cooperativa:</strong> realizando actividades en familia, asignando roles y responsabilidades de acuerdo a la edad.</p>
+
+<p><strong>Actitud amistosa:</strong> estableciendo relaciones afables y corteses; creando redes afectivas entre cada uno de los miembros, con otros grupos y la naturaleza.</p>
+
+<p><strong>Actitud ordenada y hábitos:</strong> estableciendo horarios, rutinas y organización de actividades.</p>
+
+<p><strong>Autonomía o independencia:</strong> permitiéndoles realizar tareas acorde a su desarrollo. Asumir retos-tareas.</p>
+
+<p><strong>Actitud tolerante y comprensiva:</strong> escuchando, observando, practicando puntos de vista opuestos; estableciendo convenios, sobrellevando una relación tipo contractual; aceptándolos, explicitando normas y reglas que hagan posible una convivencia armónica.</p>
+
+<p><strong>Actitud de obediencia:</strong> impartiendo órdenes consistentes, concretas y claras; compartiendo criterios entre progenitores.</p>
+
+<p><strong>Costos del servicio educativo:</strong> es imperioso que los padres de familia atiendan oportunamente sus pagos. Los hijos no deben sufrir olvidos o incumplimientos de sus padres. Los cinco primeros días de cada mes se paga el costo real de la pensión de acuerdo al nivel donde se encuentra estudiando.</p>
+
+<p><strong>Respeto y consideración:</strong> en la Unidad Educativa José Domingo de Santistevan el respeto al ser humano es demostración de cultura y de autoestima. "No hagas a otro lo que no quieres que hagan contigo". En consecuencia, el personal administrativo y de servicios, los maestros y los directivos merecen toda consideración y respeto de parte de los padres de familia y de los aprendices.</p>
+
+<h1>Himno y Bandera</h1>
+<p>El Santistevan nos llena la vida,</p>
+<p>nos forma y cultiva el espíritu,</p>
+<p>nos enseña valores y metas,</p>
+<p>bajo la diestra de Dios avanzamos.</p>
+
+<p>Es un taller del alma y el cuerpo,</p>
+<p>donde se aprende a triunfar con esfuerzo,</p>
+<p>Santistevan, una ruta al futuro</p>
+<p>que nos lleva a servir con amor.</p>
+
+<p>Eres nuestro guía, estrella del norte</p>
+<p>baluarte en ciencia, cultura y deporte</p>
+<p>José Domingo de Santistevan</p>
+<p>obra de la Junta de Beneficencia.</p>
+
+<p>Contigo aprendemos a ser generosos</p>
+<p>honestos, guardianes de la naturaleza</p>
+<p>José Domingo de Santistevan</p>
+<p>obra de la Junta de Beneficencia.</p>
+
+<p>Santistevan eres un galardón,</p>
+<p>Prendido en el corazón,</p>
+<p>Nos alientas a ser mejores,</p>
+<p>Nos haces grandes emprendedores.</p>
+
+<p>Formamos una gran familia,</p>
+<p>nuestra fuerza es el amor solidario,</p>
+<p>de Guayaquil una gran institución</p>
+<p>al servicio de la comunidad.</p>
+</section>
+
+<section id="estudio">
+  <h2>Niveles de Estudio</h2>
+    <h2>INICIAL</h2>
+    <img src="https://santistevan.edu.ec/images/santistevanimagenes/Inicial_2.jpg" alt="Flowers in Chania" width="350" height="200">
+
+  <p>En este nivel buscamos que los niños y las niñas aprendan y no solamente estudien, mediante el concepto de “aprender jugando”, lo que les permitirá explorar, experimentar y descubrir por sí mismos su entorno. Por ello, a nuestros aprendices, desde temprana edad, los incluimos en un sistema formativo que:</p>
+
+<ul>
+  <li>Desarrolla habilidades motrices a través del arte y el movimiento.</li>
+  <li>Facilita el aprendizaje divertido del inglés.</li>
+  <li>Promueve la experimentación con el entorno natural.</li>
+  <li>Fortalece el desarrollo del lenguaje.</li>
+  <li>Estimula la creatividad y la imaginación.</li>
+  <li>Potencia el pensamiento lógico de forma lúdica.</li>
+  <li>Impulsa su formación humana.</li>
+</ul>
+
+    <h2>Educación General Básica</h2>
+        <img src="https://santistevan.edu.ec/images/santistevanimagenes/Educacion_General_Basica.jpg" alt="Flowers in Chania" width="350" height="200">
+
+    <p>En este nivel fomentamos que los niños y niñas construyan aprendizaje de forma integral, promoviendo el “aprender haciendo”. Esto les permite indagar, aplicar y descubrir estrategias que les permiten adquirir los siguientes logros de aprendizaje:</p>
+
+<ul>
+  <li>Exploran y reflexionan sobre el entorno físico.</li>
+  <li>Toman decisiones con razonamiento lógico y matemático.</li>
+  <li>Desarrollan procesos autónomos de aprendizaje.</li>
+  <li>Manejan responsablemente la tecnología (TIC).</li>
+  <li>Gestionan y lideran proyectos de emprendimiento económicos y sociales.</li>
+  <li>Reafirman su identidad.</li>
+  <li>Muestran respeto y tolerancia hacia diversas creencias.</li>
+  <li>Se comunican en su lengua materna y en inglés.</li>
+  <li>Valoran expresiones artísticas y crean las suyas propias.</li>
+  <li>Participan activamente en actividades físicas y de bienestar.</li>
+</ul>
+
+      <h2>Bachillerato General Unificado</h2>
+          <img src="https://santistevan.edu.ec/images/santistevanimagenes/Bachillerato_General.jpg" alt="Flowers in Chania" width="350" height="200">
+
+      <p>El Bachillerato es una etapa crucial en la preparación interdisciplinaria de los aprendices, pues facilita tanto su integración al mundo laboral como la continuación de sus estudios en universidades o escuelas politécnicas. Con el apoyo del Departamento de Consejería Estudiantil, los jóvenes pueden elegir su perfil de manera acertada.</p>
+
+<p>Contamos con el <strong>Bachillerato Dual</strong>, una metodología de enseñanza alemana que permite a los aprendices combinar su formación en el colegio y en la empresa durante los dos últimos años de bachillerato. Esta modalidad les brinda la oportunidad de adquirir experiencia laboral y obtener una certificación internacional alemana.</p>
+
+<p><strong>Bachillerato en Ciencias</strong></p>
+
+<p>Este programa está diseñado para desarrollar habilidades y competencias en diversas áreas, garantizando la excelencia académica. Ofrece herramientas para que los jóvenes puedan emprender en diferentes campos, continuar con estudios postsecundarios y prepararse para ser ciudadanos críticos y democráticos.</p>
+</section>
+
+<section id="academica">
+  <h2>Metodología Académica</h2>
+          <img src="https://santistevan.edu.ec/images/santistevanimagenes/metodologia_academica.jpg" alt="Flowers in Chania" width="350" height="200">
+
+  <p>Nuestra misión es formar jóvenes con las competencias necesarias para desarrollar proyectos alineados con sus intereses y con un impacto social positivo. Para alcanzar estos objetivos, nos enfocamos en los siguientes resultados:</p>
+
+<p><strong>Altos Logros de Aprendizaje</strong></p>
+<ul>
+  <li>Certificación en inglés: nivel B1.</li>
+  <li>Plan lector: 40 libros al año / 15 minutos de lectura diaria.</li>
+  <li>Convenio con SANTILLANA para evaluar habilidades en lectura y matemáticas.</li>
+</ul>
+
+<p><strong>Formación Humana y Acompañamiento Tutorial</strong></p>
+<ul>
+  <li>Enfoque en el humanismo cristiano.</li>
+  <li>Acompañamiento tutorial para la elaboración de proyectos de vida.</li>
+  <li>Fomento del liderazgo social.</li>
+</ul>
+
+<p><strong>Formación Profesional y Empleabilidad</strong></p>
+<ul>
+  <li>Desarrollo de competencias profesionales.</li>
+  <li>Formación Dual certificada por la Cámara Ecuatoriano-Alemana (AHK).</li>
+</ul>
+
+<p><strong>¿Cómo lo hacemos?</strong></p>
+
+<p><strong>Metodología</strong></p>
+
+<p><strong>Nuestros Sellos Educativos</strong></p>
+
+<p>Nuestro modelo educativo requiere tiempo. Acompañar y formar requiere tiempo y formación del formador. En este modelo, los recursos educativos, la infraestructura y el equipamiento están al servicio del aprendizaje.</p>
+
+<ul>
+  <li><strong>Jornada Escolar Extendida:</strong> Garantizamos el tiempo necesario para un aprendizaje integral.</li>
+  <li><strong>Recursos Educativos:</strong> Proveemos materiales y herramientas que enriquecen el proceso educativo.</li>
+  <li><strong>Maestros en constante formación:</strong> Nuestros maestros son el corazón de todo; los capacitamos continuamente para ofrecer una formación de calidad.</li>
+  <li><strong>Cultura de evaluación:</strong> Implementamos evaluaciones constantes para mejorar y adaptar nuestra formación.</li>
+  <li><strong>Infraestructura con criterios pedagógicos:</strong> Nuestras instalaciones están diseñadas para apoyar el aprendizaje efectivo.</li>
+</ul>
+
+</section>
+
+<section id="informacion">
+  <h2>Información Académica</h2>
+  <p><strong>Convenios Académicos</strong></p>
+            <img src="https://santistevan.edu.ec/images/santistevanimagenes/Coprodeli.jpg" alt="Flowers in Chania" width="350" height="200">
+
+
+<p><strong>Convenio con la Cámara Ecuatoriano-Alemana (AHK):</strong></p>
+
+<p>Esta organización desempeña un papel crucial al certificar la formación dual alemana en nuestros colegios. Además, brinda asesoramiento valioso mediante la participación de expertos alemanes en cada carrera. Este convenio contribuye significativamente a la calidad y alineación internacional de nuestra formación profesional.</p>
+
+<p><strong>Convenio con COPRODELI Perú:</strong></p>
+
+<p>Este convenio es esencial para el desarrollo de nuestro modelo pedagógico en la red de colegios de formación profesional. La asesoría proporcionada por esta organización contribuye a enriquecer nuestras prácticas educativas y asegura la implementación de estándares de calidad internacional en la formación que ofrecemos.</p>
+
+<p>Uno de los elementos innovadores del modelo educativo de COPRODELI es el fomento de la actitud emprendedora y la formación profesional dual, aspectos que pueden ser fortalecidos mediante las capacidades de la JBG. Este modelo ha inspirado otros enfoques educativos de alto impacto en la región.</p>
+
+
+<p><strong>Período Académico</strong></p>
+            <img src="https://santistevan.edu.ec/images/santistevanimagenes/Periodo_academico.jpg" alt="Flowers in Chania" width="350" height="200">
+
+
+<p>Fundamentados en las disposiciones ministeriales, la Unidad Educativa Particular "José Domingo de Santistevan" continúa con el régimen quimestral durante el período lectivo 2024-2025.</p>
+
+<p>Durante la primera quincena de clases, se llevan a cabo reuniones con padres de familia o representantes legales para informarles sobre el sistema de evaluación. Asimismo, la planificación anual de actividades incluirá un cronograma para la preparación y entrega periódica de informes de aprendizaje.</p>
+
+
+<p><strong>Uniformes</strong></p>
+            <img src="https://santistevan.edu.ec/images/santistevanimagenes/Uniformes_Santistevan.jpg" alt="Flowers in Chania" width="350" height="200">
+
+
+<p>Hemos renovado nuestros uniformes pensando en que se ajusten a las necesidades de nuestros aprendices, permitiéndoles realizar sus actividades con mayor comodidad y bienestar.</p>
+
+<p>En la Junta de Beneficencia de Guayaquil (JBG), formamos a niños, niñas y jóvenes libres, responsables y solidarios. Nuestros aprendices participan activamente en el ejercicio de su libertad y responsabilidad, lo que se refleja en la elección y uso del uniforme escolar.</p>
+
+
+<p><strong>Horarios de Clase</strong></p>
+            <img src="https://santistevan.edu.ec/images/santistevanimagenes/Horarios_JDS_.jpg" alt="Flowers in Chania" width="350" height="200">
+
+
+<p>Respetar los ritmos de aprendizaje de los niños, niñas y adolescentes para formarlos en valores mientras aprenden haciendo requiere de tiempo.</p>
+
+<p>Por ello, hemos implementado una jornada escolar extendida de 07h45 a 15h45.</p>
+
+<p><strong>¿Qué ofrece?</strong></p>
+
+<ul>
+  <li>Un entorno seguro.</li>
+  <li>Refuerzo de materias esenciales como inglés, robótica y formación humana.</li>
+  <li>Desarrollo de habilidades académicas, artísticas, sociales y deportivas.</li>
+  <li>Culminación de proyectos y actividades escolares dentro de la institución.</li>
+</ul>
+
+<p>Este enfoque ha demostrado su éxito en países como Portugal, España, Chile y Perú, mejorando el rendimiento académico y el bienestar emocional de los aprendices.</p>
+
+
+</section>
+
+
+<section id="contacto">
+  <h2>Contáctanos</h2>
+  <form action="enviar-formulario.php" method="POST">
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+    <input type="email" name="email" placeholder="Tu correo" required>
+    <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+  <p>Email: contactoejemplar.edu.ec@gmail.com
+</p>
+  <p>Teléfono: 093 946 2254, Av. Educativa, Ciudad</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Colegio José Domingo de Santistevan. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
+
